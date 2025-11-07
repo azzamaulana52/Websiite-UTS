@@ -1,0 +1,30 @@
+body {
+  background-color: #f8f9fa;
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+.navbar-brand, .nav-link {
+  color: white !important;
+}
+.navbar-brand, h1 {
+  font-weight: bold;
+}
+.form-control {
+  background-color: white !important;
+}
+.btn-outline-success {
+  background-color: white !important;
+  color: black !important;
+  border-color: white !important;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.card-body .btn {
+  align-self: flex-end;
+}
