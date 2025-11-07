@@ -64,53 +64,16 @@ $(document).ready(function () {
       urlToImage: "https://picsum.photos/300/200?random=8",
       description: "Program peduli lingkungan kini menjadi bagian dari kurikulum di sejumlah sekolah...",
       url: "#"
-    },
-    {
-      title: "Harga Pangan Naik Menjelang Akhir Tahun",
-      publishedAt: "2025-11-08T00:00:00Z",
-      category: "Ekonomi",
-      urlToImage: "https://picsum.photos/300/200?random=9",
-      description: "Kenaikan harga sejumlah bahan pokok mulai dirasakan oleh masyarakat menjelang akhir tahun...",
-      url: "#"
-    },
-    {
-      title: "Industri Musik Digital Kian Berkembang",
-      publishedAt: "2025-11-08T00:00:00Z",
-      category: "Hiburan",
-      urlToImage: "https://picsum.photos/300/200?random=10",
-      description: "Platform musik digital terus mengalami peningkatan pengguna di berbagai daerah...",
-      url: "#"
-    },
-    {
-      title: "Infrastruktur Jalan Diperbaiki untuk Kurangi Kemacetan",
-      publishedAt: "2025-11-08T00:00:00Z",
-      category: "Nasional",
-      urlToImage: "https://picsum.photos/300/200?random=11",
-      description: "Pemerintah daerah mulai memperbaiki sejumlah ruas jalan utama untuk mengurangi kemacetan...",
-      url: "#"
-    },
-    {
-      title: "Peneliti Temukan Metode Baru Pengolahan Sampah",
-      publishedAt: "2025-11-08T00:00:00Z",
-      category: "Sains",
-      urlToImage: "https://picsum.photos/300/200?random=12",
-      description: "Tim peneliti berhasil mengembangkan metode baru yang lebih efisien dalam mengolah limbah rumah tangga...",
-      url: "#"
     }
   ];
 
-  // Contoh penggunaan:
-  console.log("Static news loaded:", staticNewsData);
-});
 
+  console.log("Static news loaded:", staticNewsData);
 
   // Function to render news cards
   function renderNewsCards(newsArray) {
-    // Clear existing cards
     $(".row").empty();
-
-    // Append each news item as a card
-    newsArray.forEach(function (item) {
+    newsArray.slice(0, 8).forEach(function (item) { // tampilkan 8 berita saja
       const cardHTML = `
         <div class="card my-4 mx-2" style="width: 18rem;">
           <img src="${item.urlToImage || 'https://via.placeholder.com/300x200'}" class="card-img-top" alt="${item.title}">
@@ -128,23 +91,20 @@ $(document).ready(function () {
 
   // Function to fetch news from API
   function fetchNewsFromAPI() {
-    $.getJSON("https://newsapi.org/v2/everything?q=indonesia&language=id&apiKey=35e9f2c44cc64db6aa812d39c29b5aed")
+    $.getJSON("https://newsapi.org/v2/everything?q=indonesia&language=id&apiKey=35e9f2c44cc64db6aa812d3929b5aed")
       .done(function (response) {
         if (response.articles && response.articles.length > 0) {
           renderNewsCards(response.articles);
         } else {
-          // If no articles, fall back to static data
           renderNewsCards(staticNewsData);
         }
       })
       .fail(function () {
-        // On API failure, use static data
         console.warn("Failed to fetch news from API. Using static data.");
         renderNewsCards(staticNewsData);
       });
   }
 
-  // Initialize by fetching news from API
+  // Jalankan fungsi saat halaman selesai dimuat
   fetchNewsFromAPI();
 });
-
