@@ -32,8 +32,77 @@ $(document).ready(function () {
       urlToImage: "https://picsum.photos/300/200?random=4",
       description: "Banyak masyarakat mulai beralih ke pola hidup sehat demi kualitas hidup yang lebih baik...",
       url: "#"
+    },
+    {
+      title: "Ekonomi Nasional Tumbuh Positif",
+      publishedAt: "2025-11-08T00:00:00Z",
+      category: "Ekonomi",
+      urlToImage: "https://picsum.photos/300/200?random=5",
+      description: "Data terbaru menunjukkan pertumbuhan ekonomi nasional mencapai angka yang menggembirakan...",
+      url: "#"
+    },
+    {
+      title: "Film Lokal Pecahkan Rekor Penonton",
+      publishedAt: "2025-11-08T00:00:00Z",
+      category: "Hiburan",
+      urlToImage: "https://picsum.photos/300/200?random=6",
+      description: "Film karya anak bangsa berhasil menarik jutaan penonton dalam waktu singkat...",
+      url: "#"
+    },
+    {
+      title: "Startup Baru Hadirkan Inovasi Energi Terbarukan",
+      publishedAt: "2025-11-08T00:00:00Z",
+      category: "Teknologi",
+      urlToImage: "https://picsum.photos/300/200?random=7",
+      description: "Sebuah startup lokal menghadirkan solusi energi terbarukan yang ramah lingkungan...",
+      url: "#"
+    },
+    {
+      title: "Kampanye Lingkungan Hidup Digalakkan di Sekolah",
+      publishedAt: "2025-11-08T00:00:00Z",
+      category: "Lingkungan",
+      urlToImage: "https://picsum.photos/300/200?random=8",
+      description: "Program peduli lingkungan kini menjadi bagian dari kurikulum di sejumlah sekolah...",
+      url: "#"
+    },
+    {
+      title: "Harga Pangan Naik Menjelang Akhir Tahun",
+      publishedAt: "2025-11-08T00:00:00Z",
+      category: "Ekonomi",
+      urlToImage: "https://picsum.photos/300/200?random=9",
+      description: "Kenaikan harga sejumlah bahan pokok mulai dirasakan oleh masyarakat menjelang akhir tahun...",
+      url: "#"
+    },
+    {
+      title: "Industri Musik Digital Kian Berkembang",
+      publishedAt: "2025-11-08T00:00:00Z",
+      category: "Hiburan",
+      urlToImage: "https://picsum.photos/300/200?random=10",
+      description: "Platform musik digital terus mengalami peningkatan pengguna di berbagai daerah...",
+      url: "#"
+    },
+    {
+      title: "Infrastruktur Jalan Diperbaiki untuk Kurangi Kemacetan",
+      publishedAt: "2025-11-08T00:00:00Z",
+      category: "Nasional",
+      urlToImage: "https://picsum.photos/300/200?random=11",
+      description: "Pemerintah daerah mulai memperbaiki sejumlah ruas jalan utama untuk mengurangi kemacetan...",
+      url: "#"
+    },
+    {
+      title: "Peneliti Temukan Metode Baru Pengolahan Sampah",
+      publishedAt: "2025-11-08T00:00:00Z",
+      category: "Sains",
+      urlToImage: "https://picsum.photos/300/200?random=12",
+      description: "Tim peneliti berhasil mengembangkan metode baru yang lebih efisien dalam mengolah limbah rumah tangga...",
+      url: "#"
     }
   ];
+
+  // Contoh penggunaan:
+  console.log("Static news loaded:", staticNewsData);
+});
+
 
   // Function to render news cards
   function renderNewsCards(newsArray) {
@@ -78,3 +147,4 @@ $(document).ready(function () {
   // Initialize by fetching news from API
   fetchNewsFromAPI();
 });
+
